@@ -36,21 +36,21 @@ const Todo = () => {
           <button onClick={() => deleteField({ index })}>x</button>
           <button onClick={() => handleToggle({ index })}>edit</button>
           <br />
-          {console.log(fields)}
+          {/* {console.log(fields)} */}
         </Fragment>
       ))}
       <input
         // value={fields.name}
         type="text"
         onChange={({ target: { value } }) =>
-          handleChangeField(value, { type: "name" })
+          handleChangeField({ value, type: "name" })
         }
       />
       <input
         // value={fields.lastname}
         type="text"
         onChange={({ target: { value } }) =>
-          handleChangeField(value, { type: "lastname" })
+          handleChangeField({ value, type: "lastname" })
         }
       />
       <button onClick={(name, lastname) => addField(name, lastname)}>

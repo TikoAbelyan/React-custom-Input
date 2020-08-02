@@ -17,7 +17,7 @@ export const useFields = () => {
   ]);
 
   const addField = ({ name, lastname }) => {
-    console.log("button click", name, lastname);
+    console.log("button click", { name, lastname });
     setFields((prevState) => [
       ...prevState,
       { name, lastname, checked: false, editable: false },
@@ -26,13 +26,15 @@ export const useFields = () => {
   const deleteField = ({ index }) =>
     setFields((prevState) => prevState.filter((it, i) => index !== i));
 
-  const handleChangeField = ({ type, value, index }) =>
+  const handleChangeField = ({ type, value, index }) => {
+    // console.log("value =>", value);
+
     setFields((prevState) =>
       prevState.map((it, i) =>
         index === i ? { ...it, [type]: value } : { ...it }
       )
     );
-
+  };
   const handleToggle = ({ index }) =>
     setFields((prevState) =>
       prevState.map((it, i) =>
