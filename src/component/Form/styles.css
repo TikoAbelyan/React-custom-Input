@@ -1,0 +1,83 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+}
+.heading {
+  text-align: center;
+}
+.all_fields {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 5px 0;
+}
+.wrap_names {
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 25px;
+  border: 1px solid #c1c1c1;
+  padding: 8px 5px 8px 5px;
+  letter-spacing: 1px;
+  border-radius: 5px 0 0 5px;
+}
+.wrap_btn {
+  width: 90px;
+  text-align: end;
+}
+.isInput {
+  width: 130px;
+  height: 25px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #c1c1c1;
+  text-indent: 5px;
+}
+.btn_del-hand {
+  height: 43px;
+  width: 40px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: red;
+  font-weight: 900;
+  font-size: 17px;
+  color: #fff;
+}
+.btn_emb {
+  border-radius: 0 5px 5px 0;
+  background: limegreen;
+  font-size: 14px;
+}
+.btn_fact {
+  border-radius: 0 5px 5px 0;
+  background: limegreen;
+  font-size: 14px;
+}
+.add_new {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+  height: 35px;
+}
+.add_new button {
+  border-radius: 0 5px 5px 0;
+  background: limegreen;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  color: #fff;
+}
+.add_new input {
+  outline: none;
+  border: 1px solid #c1c1c1;
+  text-indent: 5px;
+}
+.add_new input:nth-child(1) {
+  border-radius: 5px 0 0 5px;
+}

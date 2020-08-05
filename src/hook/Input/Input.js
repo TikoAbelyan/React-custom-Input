@@ -15,18 +15,25 @@ export const useFields = () => {
       editable: false,
     },
   ]);
-  // const []
-  const addField = ({ name, lastname }) => {
-    setFields((prevState) => [
-      ...prevState,
-      { name, lastname, checked: false, editable: false },
+  const [val, setVal] = React.useState({ name: "", lastname: "" });
+  const addField = () => {
+    setFields((prev) => [
+      ...prev,
+      {
+        name: val.name,
+        lastname: val.lastname,
+        checked: false,
+        editable: false,
+      },
     ]);
-    console.log("button click", name, lastname);
   };
   const deleteField = ({ index }) =>
     setFields((prevState) => prevState.filter((it, i) => index !== i));
 
-  const handleChangeField = ({ type, value, index }) => {
+  const handleChange = ({ type, value }) => {
+    setVal((prev) => ({ ...prev, [type]: value }));
+  };
+  const ishandleChange = ({ type, value, index }) => {
     setFields((prevState) =>
       prevState.map((it, i) =>
         index === i ? { ...it, [type]: value } : { ...it }
@@ -40,5 +47,12 @@ export const useFields = () => {
       )
     );
 
-  return { fields, addField, deleteField, handleChangeField, handleToggle };
+  return {
+    fields,
+    addField,
+    deleteField,
+    handleChange,
+    ishandleChange,
+    handleToggle,
+  };
 };
