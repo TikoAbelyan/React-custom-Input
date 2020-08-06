@@ -27,6 +27,7 @@ export const useFields = () => {
       },
     ]);
   };
+
   const deleteField = ({ index }) =>
     setFields((prevState) => prevState.filter((it, i) => index !== i));
 
