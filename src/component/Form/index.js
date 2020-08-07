@@ -9,6 +9,7 @@ const Todo = () => {
     handleChange,
     ishandleChange,
     handleToggle,
+    val,
   } = useFields();
 
   return (
@@ -64,12 +65,14 @@ const Todo = () => {
       </div>
       <div className="add_new">
         <input
+          value={val.name}
           type="text"
           onChange={({ target: { value } }) =>
             handleChange({ value, type: "name" })
           }
         />
         <input
+          value={val.lastname}
           type="text"
           onChange={({ target: { value } }) =>
             handleChange({ value, type: "lastname" })

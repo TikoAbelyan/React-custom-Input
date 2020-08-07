@@ -26,6 +26,7 @@ export const useFields = () => {
         editable: false,
       },
     ]);
+    setVal({ name: "", lastname: "" });
   };
 
   const deleteField = ({ index }) =>
@@ -50,6 +51,7 @@ export const useFields = () => {
 
   return {
     fields,
+    val,
     addField,
     deleteField,
     handleChange,
