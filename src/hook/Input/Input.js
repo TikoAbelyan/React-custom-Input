@@ -16,6 +16,14 @@ export const useFields = () => {
     },
   ]);
   const [val, setVal] = React.useState({ name: "", lastname: "" });
+  const [searchTerm, setSearchTerm] = React.useState("");
+
+  React.useEffect(() => {
+    const result = fields.filter((person) =>
+      person.name.toLocaleLowerCase().includes(searchTerm)
+    );
+    console.log("res =>", result);
+  }, [searchTerm]);
   const addField = () => {
     setFields((prev) => [
       ...prev,
@@ -48,14 +56,20 @@ export const useFields = () => {
         index === i ? { ...it, editable: !it.editable } : { ...it }
       )
     );
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    console.log(searchTerm);
+  };
 
   return {
     fields,
     val,
+    searchTerm,
     addField,
     deleteField,
     handleChange,
     ishandleChange,
     handleToggle,
+    handleSearch,
   };
 };

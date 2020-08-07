@@ -5,6 +5,16 @@
   width: 400px;
   margin: 0 auto;
 }
+.search {
+  width: 396px;
+  display: flex;
+  margin: 5px auto;
+  border-radius: 5px;
+  height: 25px;
+  outline: none;
+  border: 1px solid #c1c1c1;
+  text-indent: 5px;
+}
 .heading {
   text-align: center;
 }

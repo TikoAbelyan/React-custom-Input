@@ -9,12 +9,21 @@ const Todo = () => {
     handleChange,
     ishandleChange,
     handleToggle,
+    handleSearch,
     val,
+    searchTerm,
   } = useFields();
 
   return (
     <div>
       <h1 className="heading">Interactive handling input fields</h1>
+
+      <input
+        className="search"
+        placeholder="search"
+        value={searchTerm}
+        onChange={(e) => handleSearch(e)}
+      />
       <div className="wrap">
         {!!fields &&
           fields.map((el, index) => (
@@ -66,6 +75,7 @@ const Todo = () => {
       <div className="add_new">
         <input
           value={val.name}
+          required={true}
           type="text"
           onChange={({ target: { value } }) =>
             handleChange({ value, type: "name" })
@@ -73,6 +83,7 @@ const Todo = () => {
         />
         <input
           value={val.lastname}
+          required={true}
           type="text"
           onChange={({ target: { value } }) =>
             handleChange({ value, type: "lastname" })
